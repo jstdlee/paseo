@@ -1,4 +1,5 @@
 name: Deploy Relay
+# Masked. This fork runs the Linux arm64 desktop release only.
 
 on:
   # Manual-only while relay.paseo.sh bridges traffic to the Fly deployment.
@@ -7,6 +8,7 @@ on:
 
 jobs:
   deploy:
+    if: false
     runs-on: ubuntu-latest
 
     steps:

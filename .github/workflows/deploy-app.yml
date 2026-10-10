@@ -1,4 +1,5 @@
 name: Deploy App
+# Masked. This fork runs the Linux arm64 desktop release only.
 
 on:
   push:
@@ -11,6 +12,7 @@ on:
 
 jobs:
   deploy:
+    if: false
     runs-on: ubuntu-latest
 
     steps:

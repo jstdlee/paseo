@@ -1,4 +1,5 @@
 name: Docker
+# Masked. This fork runs the Linux arm64 desktop release only.
 
 on:
   push:
@@ -38,6 +39,7 @@ env:
 
 jobs:
   setup:
+    if: false
     runs-on: ubuntu-latest
     outputs:
       image: ${{ steps.values.outputs.image }}
@@ -112,7 +114,7 @@ jobs:
 
   build:
     needs: setup
-    if: needs.setup.outputs.publish != 'true'
+    if: false
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -137,7 +139,7 @@ jobs:
 
   publish:
     needs: setup
-    if: needs.setup.outputs.publish == 'true'
+    if: false
     runs-on: ubuntu-latest
     permissions:
       contents: read

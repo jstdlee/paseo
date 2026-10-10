@@ -1,4 +1,5 @@
 name: Android APK Release
+# Masked. This fork runs the Linux arm64 desktop release only.
 
 on:
   push:
@@ -21,6 +22,7 @@ env:
 
 jobs:
   ensure-release:
+    if: false
     permissions:
       contents: write
     runs-on: ubuntu-latest
@@ -63,6 +65,7 @@ jobs:
           fi
 
   publish-android-apk:
+    if: false
     needs: [ensure-release]
     permissions:
       contents: write

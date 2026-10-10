@@ -1,4 +1,5 @@
 name: Nix
+# Masked. This fork runs the Linux arm64 desktop release only.
 
 on:
   push:
@@ -9,6 +10,7 @@ permissions:
 
 jobs:
   build:
+    if: false
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -101,6 +103,7 @@ jobs:
         run: nix build .#desktop -o result-desktop
 
   build-desktop-darwin:
+    if: false
     runs-on: macos-14
     steps:
       - uses: actions/checkout@v4

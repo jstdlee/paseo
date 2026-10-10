@@ -1,4 +1,5 @@
 name: Desktop Rollout
+# Masked. This fork runs the Linux arm64 desktop release only.
 
 on:
   workflow_dispatch:
@@ -21,6 +22,7 @@ env:
 
 jobs:
   stamp:
+    if: false
     permissions:
       contents: write
     runs-on: ubuntu-latest

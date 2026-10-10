@@ -66,10 +66,18 @@ linux:
     - from: bin/paseo
       to: bin/paseo
   target:
-    - AppImage
-    - deb
-    - rpm
-    - tar.gz
+    - target: AppImage
+      arch:
+        - arm64
+    - target: deb
+      arch:
+        - arm64
+    - target: rpm
+      arch:
+        - arm64
+    - target: tar.gz
+      arch:
+        - arm64
 deb:
   afterInstall: scripts/linux-sandbox/after-install.tpl
 rpm:

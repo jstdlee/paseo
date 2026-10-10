@@ -1,4 +1,5 @@
 name: Nix Update Hash
+# Masked. This fork runs the Linux arm64 desktop release only.
 
 on:
   push:
@@ -23,6 +24,7 @@ permissions:
 
 jobs:
   update-hash:
+    if: false
     runs-on: ubuntu-latest
     steps:
       - uses: actions/create-github-app-token@v1
